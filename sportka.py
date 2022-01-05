@@ -36,4 +36,5 @@ while opakovat:
         continue
     else:
         break
+print("\n***Hacker Ninjas North 2022***")
 input()
