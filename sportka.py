@@ -17,12 +17,12 @@ while opakovat:
     otazka = [
         inquirer.List("main_menu",
         message="Co chceš losovat?",
-        choices=["Celý tyket", "Sloupec"],
+        choices=["Celý tiket", "Sloupec"],
         ),
     ]
     odpoved = inquirer.prompt(otazka)
     # konec menu
-    if odpoved == {'main_menu': 'Celý tyket'}:  # vyplnění celého tiketu
+    if odpoved == {'main_menu': 'Celý tiket'}:  # vyplnění celého tiketu
         while sloupec <= 10:
             print("Vylosovaná čísla jsou:")
             print("Sloupec ", sloupec, random.sample(cisla, 6),"\n")
