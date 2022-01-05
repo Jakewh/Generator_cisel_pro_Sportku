@@ -1,2 +1,2 @@
 # sportka
- Jedoducjý script pro losování čísel
+ Jedoduchý script pro losování čísel
