@@ -1,4 +1,4 @@
-import inquirer, random
+import inquirer, random, re
 
 print(""" 
                       _   _         
