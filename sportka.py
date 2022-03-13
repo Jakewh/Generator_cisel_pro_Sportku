@@ -13,10 +13,16 @@ import random
     |_|                             
                                                                
 """
+
 okno = tk.Tk()
 okno.title("Generátor tiketů")
 
+# ikona okna
+ikona = PhotoImage(file="/home/jakub/GitHub/sportka/ico.png")
+okno.iconphoto(True, ikona)
+
 def cely():
+    """losování celého tiketu"""
     top = tk.Toplevel()
     cisla = list(range(1,50))
     Label(top, text=("Sloupec 1", random.sample(cisla, 6))).grid(row=0, column=0, sticky="w")
@@ -31,11 +37,27 @@ def cely():
     Label(top, text=("Sloupec 10", random.sample(cisla, 6))).grid(row=9, column=0, sticky="w")
 
 def sloupec():
+    """losování sloupce"""
     top = tk.Toplevel()
     cisla = list(range(1,50))
     Label(top, text=random.sample(cisla, 6)).grid(row=0, column=0)
 
-Label(okno, text="Co chceš losovat?\n").grid(row=0, column=0, columnspan=2, sticky="we")
+def info_menu():
+    """ Položka "Info" v menu"""
+    info_okno = tk.Toplevel()
+    info_okno.title("Info")
+    Label(info_okno, image=ikona).grid(row=0, column=0, pady=5)
+    Label(info_okno, text="Generátor tiketů v0.2.1", font="bold").grid(row=1, column=0, sticky="we", pady=5, padx=5)
+    Label(info_okno, text="Jakub Kolář\nkolarkuba@gmail.com\n2021").grid(row=2, column=0, sticky="we", pady=5, padx=5)
+    close_button = Button(info_okno,text = "Zavřít",command=lambda:info_okno.destroy()).grid(row=3, column=0, pady=5)
+
+Label(okno, text="\nCo chceš losovat?\n", font="bold").grid(row=0, column=0, columnspan=2, sticky="we")
+
+mb = Menu(okno)
+file_menu = Menu(mb, tearoff=0)
+mb.add_command(label="Info", command=info_menu)
+okno.config(menu=mb)
+
 cely = tk.Button(okno, text="Celý tiket", command=cely).grid(row=1, column=0)
 sloupec = tk.Button(okno, text="Pouze sloupec", command=sloupec).grid(row=1, column=1)
 
