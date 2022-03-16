@@ -1,3 +1,3 @@
 # sportka
-<img src="https://github.com/Jakewh/sportka/blob/a159ef76f9b316308b151626df0440cdc3a50d0b/screen.png">
+<img src="https://github.com/Jakewh/sportka/blob/c8151c682f31daa51733eeb87070840c5db1065a/screen.png">
  Jedoduchý script pro losování čísel
